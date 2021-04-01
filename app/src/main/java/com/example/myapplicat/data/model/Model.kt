@@ -1,11 +1,10 @@
-package com.example.myapplicat
+package com.example.myapplicat.data.model
 
 
-import android.os.Parcelable
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class Model (
-    @SerialName("image") val picture: String?
+    @SerialName("url") val picture: String?
 )
