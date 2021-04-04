@@ -9,14 +9,15 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.myapplicat.R
 import com.example.myapplicat.data.model.Model
+import kotlinx.android.synthetic.main.recycler_cats.*
 
 
 class FirstFragment : Fragment() {
     private val viewModel by viewModels<FirstViewModel>()
-    private var pushBtn: Button? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,26 +28,18 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        pushBtn = view.findViewById<Button>(R.id.refresh).apply {
-            setOnClickListener {
-                viewModel.getCats(requireActivity())
-                viewModel.catsLiveData.observe(viewLifecycleOwner, {
-                    bind(it)
-                })
+        viewModel.getCats(requireActivity())
+        viewModel.catsLiveData.observe(viewLifecycleOwner, {
+            recyclerCat.apply {
+                layoutManager = LinearLayoutManager(activity)
+                adapter = CatAdapter(it)
             }
-        }
-    }
 
-    private fun bind(cats: List<Model>) {
-        val picture = cats[0].picture
-        val cat = view?.findViewById<ImageView>(R.id.tv_fragment_name)
-        if (cat != null) {
-            Glide.with(requireActivity())
-                .load(picture)
-                .centerCrop()
-                .into(cat)
-        }
+        })
     }
 }
+
+
+
+
 
