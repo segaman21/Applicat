@@ -11,8 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragments_container,first)
+            .add(R.id.fragments_container, first)
             .commit()
     }
-
 }

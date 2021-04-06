@@ -32,19 +32,19 @@ class CatViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val origin = itemView.findViewById<TextView>(R.id.origin_cat_desc)
     val temperament = itemView.findViewById<TextView>(R.id.temperament_cat_desc)
     val description = itemView.findViewById<TextView>(R.id.description_cat_desc)
-    val image = itemView.findViewById<ImageView>(R.id.image_cat)
+   val image = itemView.findViewById<ImageView>(R.id.image_cat)
 
     fun bind(item: ModelCategories) {
         name.text = item.name
         origin.text = item.origin
         temperament.text = item.temperament
         description.text = item.description
-        val picture = item.image
-        if (image != null) {
-            Glide.with(itemView)
-                .load(picture)
-                .centerCrop()
-                .into(image)
-        }
+//             val picture = item.image
+//        if (image != null) {
+//            Glide.with(itemView)
+//                .load(picture)
+//                .centerCrop()
+//                .into(image)
+//        }
     }
 }

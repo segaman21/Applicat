@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/image_cat"
-        android:layout_width="170dp"
-        android:layout_height="260dp"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:scaleType="centerInside"
@@ -18,34 +18,40 @@
         android:id="@+id/name_cat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="15dp"
         android:text="Name cat:"
         app:layout_constraintStart_toEndOf="@+id/image_cat"
         app:layout_constraintTop_toTopOf="@+id/image_cat" />
 
     <TextView
         android:id="@+id/name_cat_desc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:text="qweqw"
+        android:layout_marginEnd="5dp"
         app:layout_constraintStart_toEndOf="@+id/name_cat"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/name_cat" />
 
     <TextView
         android:id="@+id/origin_cat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:text="Origin:"
+        android:layout_marginEnd="10dp"
         app:layout_constraintStart_toEndOf="@+id/image_cat"
-        app:layout_constraintTop_toBottomOf="@+id/name_cat" />
+        app:layout_constraintTop_toBottomOf="@+id/name_cat_desc" />
 
     <TextView
         android:id="@+id/origin_cat_desc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/origin_cat"
         app:layout_constraintTop_toTopOf="@+id/origin_cat" />
 
@@ -53,17 +59,19 @@
         android:id="@+id/temperament_cat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:text="Temperament:"
         app:layout_constraintStart_toEndOf="@+id/image_cat"
-        app:layout_constraintTop_toBottomOf="@+id/origin_cat" />
+        app:layout_constraintTop_toBottomOf="@+id/origin_cat_desc" />
 
     <TextView
         android:id="@+id/temperament_cat_desc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/temperament_cat"
         app:layout_constraintTop_toTopOf="@+id/temperament_cat" />
 
@@ -71,18 +79,21 @@
         android:id="@+id/description_cat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:text="Description:"
         app:layout_constraintStart_toEndOf="@+id/image_cat"
-        app:layout_constraintTop_toBottomOf="@+id/temperament_cat" />
+        app:layout_constraintTop_toBottomOf="@+id/temperament_cat_desc" />
 
     <TextView
         android:id="@+id/description_cat_desc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        app:layout_constraintStart_toEndOf="@+id/description_cat"
-        app:layout_constraintTop_toTopOf="@+id/description_cat" />
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_cat"
+        app:layout_constraintTop_toBottomOf="@+id/description_cat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

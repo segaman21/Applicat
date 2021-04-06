@@ -8,6 +8,7 @@ import retrofit2.Retrofit
 
 class NetworkModule {
     val json = Json {
+        isLenient = true
         prettyPrint = true
         ignoreUnknownKeys = true
         coerceInputValues = true
