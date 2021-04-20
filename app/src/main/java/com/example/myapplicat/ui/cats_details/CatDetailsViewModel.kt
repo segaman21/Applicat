@@ -11,8 +11,8 @@ import kotlinx.coroutines.launch
 
 class CatDetailsViewModel : ViewModel() {
 
-    private val _catsDetLiveData = MutableLiveData<List<ModelCategories>>()
-    val catsDetLiveData: LiveData<List<ModelCategories>> get() = _catsDetLiveData
+    private val _catsDetLiveData = MutableLiveData<ModelCategories>()
+    val catsDetLiveData: LiveData<ModelCategories> get() = _catsDetLiveData
     private val repository = Repository()
 
     fun getDetCats(context: Context, catId: String?) {

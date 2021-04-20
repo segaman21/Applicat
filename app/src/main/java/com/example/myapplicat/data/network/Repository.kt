@@ -15,10 +15,10 @@ class Repository {
             api.loadCats()}
         return cat
     }
-    suspend fun getCats(context: Context, catId: String?): List<ModelCategories>? {
-        var cat: List<ModelCategories>? = null
+    suspend fun getCats(context: Context, catId: String?): ModelCategories? {
+        var cat: ModelCategories? = null
         cat = withContext(Dispatchers.IO){
-            api.loadCats()}
+            api.getCats(catId)}
         return cat
     }
 }
