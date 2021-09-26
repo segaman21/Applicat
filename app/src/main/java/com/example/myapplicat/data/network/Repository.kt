@@ -7,18 +7,18 @@ import kotlinx.coroutines.withContext
 
 class Repository {
     private val api = NetworkModule().provideApi()
-    private val key = "533ac9a5-6204-4c64-8faa-3e6494c6a961"
+//    private val key = "533ac9a5-6204-4c64-8faa-3e6494c6a961"
 
-    suspend fun loadCats(context: Context): List<ModelCategories>? {
+    suspend fun loadAllCats(context: Context): List<ModelCategories>? {
         var cat: List<ModelCategories>? = null
         cat = withContext(Dispatchers.IO){
-            api.loadCats()}
+            api.loadAllCats()}
         return cat
     }
-    suspend fun getCats(context: Context, catId: String?): ModelCategories? {
+    suspend fun getChosenCat(context: Context, catId: String?): ModelCategories? {
         var cat: ModelCategories? = null
         cat = withContext(Dispatchers.IO){
-            api.getCats(catId)}
+            api.getChosenCat(catId)}
         return cat
     }
 }

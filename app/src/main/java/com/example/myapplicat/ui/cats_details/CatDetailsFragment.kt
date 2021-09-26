@@ -10,21 +10,21 @@ import androidx.fragment.app.viewModels
 import com.example.myapplicat.R
 import com.example.myapplicat.data.model.ModelCategories
 
-class CatDetails : Fragment() {
+class CatDetailsFragment : Fragment() {
     private val viewModel by viewModels<CatDetailsViewModel>()
-    lateinit var nameCat: TextView
-    lateinit var origin: TextView
-    lateinit var description: TextView
-    lateinit var temperament : TextView
-    lateinit var lifeSpan : TextView
+
+    private lateinit var nameCat: TextView
+    private lateinit var origin: TextView
+    private lateinit var description: TextView
+    private lateinit var temperament : TextView
+    private lateinit var lifeSpan : TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.cat_details, container, false)
-        return view
+        return inflater.inflate(R.layout.details_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,8 +34,9 @@ class CatDetails : Fragment() {
         description = view?.findViewById(R.id.description_cat_desc)
         temperament = view?.findViewById(R.id.temperament_cat_desc)
         lifeSpan = view?.findViewById(R.id.life_cat_desc)
-        val catId = arguments?.getString(CAT_ID)
-        viewModel.getDetCats(requireActivity(), catId)
+        val catId = arguments?.getString("CAT")
+
+        viewModel.getCatDetails(requireActivity(), catId)
         initObserver(catId)
     }
 
@@ -53,14 +54,14 @@ class CatDetails : Fragment() {
         lifeSpan.text = cats.life
     }
 
-    companion object {
-        private const val CAT_ID = "cats"
-        fun newInstance(catPreview: String): CatDetails {
-            val fragment = CatDetails()
-            val args = Bundle()
-            args.putString(CAT_ID, catPreview)
-            fragment.arguments = args
-            return fragment
-        }
-    }
+//    companion object {
+//        private const val CAT_ID = "cats"
+//        fun newInstance(catPreview: String): CatDetailsFragment {
+//            val fragment = CatDetailsFragment()
+//            val args = Bundle()
+//            args.putString(CAT_ID, catPreview)
+//            fragment.arguments = args
+//            return fragment
+//        }
+//    }
 }

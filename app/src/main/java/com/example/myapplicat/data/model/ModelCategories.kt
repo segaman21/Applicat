@@ -18,5 +18,4 @@ data class ModelCategories(
 @Serializable
 data class ModelImage(
     @SerialName("url") val url: String?=null
-
 )

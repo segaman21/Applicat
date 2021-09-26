@@ -7,14 +7,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Retrofit
 
 class NetworkModule {
-    val json = Json {
+    private val json = Json {
         isLenient = true
         prettyPrint = true
         ignoreUnknownKeys = true
         coerceInputValues = true
     }
     private val baseUrl = "https://api.thecatapi.com/v1/"
-    val contentType = "application/json; charset=utf-8".toMediaType()
+    private val contentType = "application/json; charset=utf-8".toMediaType()
 
     fun provideApi(): CatsApi {
         val retrofit = Retrofit.Builder()

@@ -15,9 +15,9 @@ class CatDetailsViewModel : ViewModel() {
     val catsDetLiveData: LiveData<ModelCategories> get() = _catsDetLiveData
     private val repository = Repository()
 
-    fun getDetCats(context: Context, catId: String?) {
+    fun getCatDetails(context: Context, catId: String?) {
         viewModelScope.launch {
-            _catsDetLiveData.value = repository.getCats(context,catId)
+            _catsDetLiveData.value = repository.getChosenCat(context,catId)
         }
     }
 }
