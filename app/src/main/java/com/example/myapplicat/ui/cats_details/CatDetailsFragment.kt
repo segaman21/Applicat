@@ -1,67 +1,58 @@
 package com.example.myapplicat.ui.cats_details
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.bumptech.glide.Glide
 import com.example.myapplicat.R
 import com.example.myapplicat.data.model.ModelCategories
+import com.example.myapplicat.databinding.DetailsFragmentBinding
+import kotlinx.android.synthetic.main.details_fragment.*
 
 class CatDetailsFragment : Fragment() {
     private val viewModel by viewModels<CatDetailsViewModel>()
-
-    private lateinit var nameCat: TextView
-    private lateinit var origin: TextView
-    private lateinit var description: TextView
-    private lateinit var temperament : TextView
-    private lateinit var lifeSpan : TextView
+    private var _binding: DetailsFragmentBinding? = null
+    private val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.details_fragment, container, false)
+        _binding = DetailsFragmentBinding.inflate(inflater, container, false)
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        nameCat=view?.findViewById(R.id.name_cat_desc)
-        origin = view?.findViewById(R.id.origin_cat_desc)
-        description = view?.findViewById(R.id.description_cat_desc)
-        temperament = view?.findViewById(R.id.temperament_cat_desc)
-        lifeSpan = view?.findViewById(R.id.life_cat_desc)
         val catId = arguments?.getString("CAT")
-
         viewModel.getCatDetails(requireActivity(), catId)
-        initObserver(catId)
-    }
-
-    private fun initObserver(CatId: String?) {
         viewModel.catsDetLiveData.observe(viewLifecycleOwner, {
             bind(it)
         })
     }
 
-    private fun bind(cats: ModelCategories) {
-        nameCat.text = cats.name
-        origin.text = cats.origin
-        temperament.text = cats.temperament
-        description.text = cats.description
-        lifeSpan.text = cats.life
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding=null
     }
 
-//    companion object {
-//        private const val CAT_ID = "cats"
-//        fun newInstance(catPreview: String): CatDetailsFragment {
-//            val fragment = CatDetailsFragment()
-//            val args = Bundle()
-//            args.putString(CAT_ID, catPreview)
-//            fragment.arguments = args
-//            return fragment
-//        }
-//    }
+    private fun bind(cats: ModelCategories) {
+        binding?.nameText?.text = cats.name
+        binding?.originText?.text = cats.origin
+        binding?.descriptionText?.text = cats.description
+        binding?.lifeText?.text = cats.life
+        val picture = cats.image
+        cat_picture.let {
+            Glide.with(this)
+                .load(picture?.url)
+                .centerCrop()
+                .into(it)
+        }
+    }
 }

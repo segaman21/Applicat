@@ -12,10 +12,10 @@ data class ModelCategories(
     @SerialName("description") val description: String?,
     @SerialName("life_span") val life: String?,
     @SerialName("image") val image: ModelImage?=null
-
 )
 
 @Serializable
 data class ModelImage(
+
     @SerialName("url") val url: String?=null
 )

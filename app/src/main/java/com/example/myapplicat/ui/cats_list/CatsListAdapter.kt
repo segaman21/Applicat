@@ -15,13 +15,12 @@ typealias OnCatClick = (ModelCategories) -> Unit
 class CatsListAdapter(private val onClick: OnCatClick) :
     ListAdapter<ModelCategories, CatsListAdapter.CatViewHolder>(CatDiffCallback) {
 
-
     class CatViewHolder(private val viewBinding: CatsItemBinding, onClick: OnCatClick) :
         RecyclerView.ViewHolder(viewBinding.root) {
         private var currentCat: ModelCategories? = null
 
         init {
-            viewBinding.imageCat?.apply {
+            viewBinding.imageCat.apply {
                 setOnClickListener {
                     currentCat?.let {
                         onClick(it)
@@ -33,9 +32,9 @@ class CatsListAdapter(private val onClick: OnCatClick) :
         fun bind(cat: ModelCategories) {
             currentCat = cat
             viewBinding.apply {
-                nameTextCat?.text = cat.name
+                nameTextCat.text = cat.name
                 val picture = cat.image
-                imageCat?.let {
+                imageCat.let {
                     Glide.with(itemView)
                         .load(picture?.url)
                         .centerCrop()

@@ -9,9 +9,9 @@
         android:name="com.example.myapplicat.ui.cats_details.CatDetailsFragment"
         android:label="CatDetailsFragment"
         tools:layout="@layout/details_fragment">
-        <argument android:name="id_cat"
-            app:argType="string"
-            android:defaultValue="abus" />
+        <argument
+            android:name="id_cat"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/catsListFragment2"
@@ -19,8 +19,9 @@
         android:label="CatsListFragment"
         tools:layout="@layout/main_fragment">
         <action
-            android:id="@+id/action_catsListFragment_to_catDetailsFragment"
+            android:id="@+id/action_to_catDetailsFragment"
             app:destination="@id/catDetailsFragment2"
-            app:enterAnim="@android:anim/slide_in_left" />
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
 </navigation>

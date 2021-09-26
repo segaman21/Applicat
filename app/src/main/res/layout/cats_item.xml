@@ -6,9 +6,9 @@
 
     <ImageView
         android:id="@+id/image_cat"
-        android:layout_width="330dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="25dp"
+        android:layout_width="@dimen/card_size"
+        android:layout_height="@dimen/card_size"
+        android:layout_marginTop="@dimen/card_space"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,9 +18,8 @@
         android:id="@+id/name_text_cat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="cat"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/cat_name_size"
+         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_cat" />
 

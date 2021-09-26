@@ -25,7 +25,7 @@ class CatsListFragment : Fragment(R.layout.main_fragment) {
             CatsListAdapter(onClick = {
                 var bundle = bundleOf("CAT" to it.id)
                 findNavController().navigate(
-                    R.id.action_catsListFragment_to_catDetailsFragment,
+                    R.id.action_to_catDetailsFragment,
                     bundle
                 )
             })
@@ -35,14 +35,6 @@ class CatsListFragment : Fragment(R.layout.main_fragment) {
             catListAdapter.submitList(animals)
         })
     }
-
-//    override fun startCatDetails(item: ModelCategories) {
-//        fragmentManager
-//            ?.beginTransaction()
-//            ?.replace(R.id.fragments_container, CatDetailsFragment.newInstance(item.id))
-//            ?.addToBackStack(null)
-//            ?.commit()
-//    }
 }
 
 
