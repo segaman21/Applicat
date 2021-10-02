@@ -1,3 +1,4 @@
+
 package com.example.myapplicat.ui.cats_list
 
 import android.os.Bundle
@@ -5,11 +6,9 @@ import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.myapplicat.R
 import kotlinx.android.synthetic.main.main_fragment.*
-
 
 class CatsListFragment : Fragment(R.layout.main_fragment) {
     private val viewModel by viewModels<CatsListViewModel>()
@@ -23,7 +22,7 @@ class CatsListFragment : Fragment(R.layout.main_fragment) {
         super.onViewCreated(view, savedInstanceState)
         val catListAdapter =
             CatsListAdapter(onClick = {
-                var bundle = bundleOf("CAT" to it.id)
+                var bundle = bundleOf("CAT" to it.id, "IMAGE_ID" to it.image?.url)
                 findNavController().navigate(
                     R.id.action_to_catDetailsFragment,
                     bundle
@@ -36,8 +35,3 @@ class CatsListFragment : Fragment(R.layout.main_fragment) {
         })
     }
 }
-
-
-
-
-

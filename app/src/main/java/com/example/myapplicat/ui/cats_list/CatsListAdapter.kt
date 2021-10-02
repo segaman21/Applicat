@@ -1,6 +1,4 @@
 package com.example.myapplicat.ui.cats_list
-
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
@@ -54,7 +52,6 @@ class CatsListAdapter(private val onClick: OnCatClick) :
         val cat = getItem(position)
         holder.bind(cat)
     }
-
 }
 
 object CatDiffCallback : DiffUtil.ItemCallback<ModelCategories>() {
@@ -69,6 +66,3 @@ object CatDiffCallback : DiffUtil.ItemCallback<ModelCategories>() {
         return oldItem == newItem
     }
 }
-
-
-

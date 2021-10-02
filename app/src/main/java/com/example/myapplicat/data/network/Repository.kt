@@ -1,3 +1,4 @@
+
 package com.example.myapplicat.data.network
 
 import android.content.Context
@@ -11,14 +12,17 @@ class Repository {
 
     suspend fun loadAllCats(context: Context): List<ModelCategories>? {
         var cat: List<ModelCategories>? = null
-        cat = withContext(Dispatchers.IO){
-            api.loadAllCats()}
+        cat = withContext(Dispatchers.IO) {
+            api.loadAllCats()
+        }
         return cat
     }
+
     suspend fun getChosenCat(context: Context, catId: String?): ModelCategories? {
         var cat: ModelCategories? = null
-        cat = withContext(Dispatchers.IO){
-            api.getChosenCat(catId)}
+        cat = withContext(Dispatchers.IO) {
+            api.getChosenCat(catId)
+        }
         return cat
     }
 }

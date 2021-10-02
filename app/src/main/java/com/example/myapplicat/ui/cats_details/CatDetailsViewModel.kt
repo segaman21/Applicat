@@ -17,7 +17,7 @@ class CatDetailsViewModel : ViewModel() {
 
     fun getCatDetails(context: Context, catId: String?) {
         viewModelScope.launch {
-            _catsDetLiveData.value = repository.getChosenCat(context,catId)
+            _catsDetLiveData.value = repository.getChosenCat(context, catId)
         }
     }
 }

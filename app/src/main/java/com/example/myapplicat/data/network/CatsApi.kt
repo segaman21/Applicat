@@ -4,7 +4,6 @@ import com.example.myapplicat.data.model.ModelCategories
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-
 interface CatsApi {
     @GET("breeds")
     suspend fun loadAllCats(): List<ModelCategories>
