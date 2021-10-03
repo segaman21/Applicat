@@ -1,9 +1,15 @@
 package com.example.myapplicat.data.network
 
-import com.example.myapplicat.data.model.Model
+import com.example.myapplicat.data.model.ModelCategories
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface CatsApi {
-    @GET("images/search")
-    suspend fun loadCats(): List<Model>
+    @GET("breeds")
+    suspend fun loadAllCats(): List<ModelCategories>
+
+    @GET("breeds/{cat_id}")
+    suspend fun getChosenCat(
+        @Path("cat_id") catId: String?
+    ): ModelCategories
 }

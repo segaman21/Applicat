@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/details_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.cats_details.CatDetailsFragment">
+
+    <TextView
+        android:id="@+id/name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_name_start_space"
+        android:layout_marginTop="@dimen/item_name_start_space"
+        android:text="@string/cat_name_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_text"
+        android:layout_width="@dimen/size_description_name"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_name_start_space"
+        android:layout_marginEnd="@dimen/item_name_start_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name_label"
+        app:layout_constraintTop_toTopOf="@+id/name_label" />
+
+    <TextView
+        android:id="@+id/origin_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_origin_start_space"
+        android:layout_marginTop="@dimen/item_origin_start_space"
+        android:text="@string/cat_origin_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_text" />
+
+    <TextView
+        android:id="@+id/origin_text"
+        android:layout_width="@dimen/size_description_name"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_origin_start_space"
+        android:layout_marginEnd="@dimen/item_origin_start_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/origin_label"
+        app:layout_constraintTop_toTopOf="@+id/origin_label" />
+
+    <TextView
+        android:id="@+id/life_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_life_start_space"
+        android:layout_marginTop="@dimen/item_life_start_space"
+        android:text="@string/cat_life_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/origin_text" />
+
+    <TextView
+        android:id="@+id/life_text"
+        android:layout_width="@dimen/size_description_name"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_life_start_space"
+        android:layout_marginEnd="@dimen/item_life_start_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/life_label"
+        app:layout_constraintTop_toTopOf="@+id/life_label" />
+
+    <TextView
+        android:id="@+id/description_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_description_start_space"
+        android:layout_marginTop="@dimen/item_description_start_space"
+        android:text="@string/cat_description_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/life_text" />
+
+    <TextView
+        android:id="@+id/description_text"
+        android:layout_width="@dimen/size_description_name"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_description_start_space"
+        android:layout_marginEnd="@dimen/item_description_start_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/description_label"
+        app:layout_constraintTop_toTopOf="@+id/description_label" />
+
+    <ImageView
+        android:id="@+id/cat_picture"
+        android:layout_width="@dimen/size_cat_picture_details"
+        android:layout_height="@dimen/size_cat_picture_details"
+        android:layout_margin="@dimen/indent_cat_picture_details"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@id/button_save_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_text" />
+
+    <Button
+        android:id="@+id/button_save_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_image_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

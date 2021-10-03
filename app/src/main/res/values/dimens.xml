@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_description_name">0dp</dimen>
+    <dimen name="card_size">350dp</dimen>
+    <dimen name="card_space">20dp</dimen>
+    <dimen name="item_name_start_space">10dp</dimen>
+    <dimen name="item_origin_start_space">10dp</dimen>
+    <dimen name="item_life_start_space">10dp</dimen>
+    <dimen name="item_description_start_space">10dp</dimen>
+    <dimen name="cat_name_size">20sp</dimen>
+    <dimen name="size_cat_picture_details">0dp</dimen>
+    <dimen name="indent_cat_picture_details">10dp</dimen>
+</resources>
