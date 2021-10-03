@@ -1,4 +1,5 @@
 package com.example.myapplicat.ui.cats_details
+
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -18,6 +19,7 @@ import android.provider.Settings
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.myapplicat.BuildConfig
+import com.example.myapplicat.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -54,7 +56,7 @@ class CatDetailsFragment : Fragment() {
                     val picture: Bitmap = downloadPic(imageId)
                     saveImage(picture, cats)
                 }
-                Toast.makeText(context, "Image Saved", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, R.string.image_saved_toast, Toast.LENGTH_LONG).show()
             }
         })
     }
@@ -114,7 +116,6 @@ class CatDetailsFragment : Fragment() {
             try {
                 val fOut: OutputStream = FileOutputStream(imageFile)
                 image.compress(Bitmap.CompressFormat.PNG, 100, fOut)
-                fOut.flush()
                 fOut.close()
             } catch (e: Exception) {
                 e.printStackTrace()

@@ -10,6 +10,6 @@ interface CatsApi {
 
     @GET("breeds/{cat_id}")
     suspend fun getChosenCat(
-        @Path("cat_id") catId: String?,
+        @Path("cat_id") catId: String?
     ): ModelCategories
 }

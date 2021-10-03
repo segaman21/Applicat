@@ -8,4 +8,6 @@
     <dimen name="item_life_start_space">10dp</dimen>
     <dimen name="item_description_start_space">10dp</dimen>
     <dimen name="cat_name_size">20sp</dimen>
+    <dimen name="size_cat_picture_details">0dp</dimen>
+    <dimen name="indent_cat_picture_details">10dp</dimen>
 </resources>

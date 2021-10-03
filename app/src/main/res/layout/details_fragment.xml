@@ -89,9 +89,9 @@
 
     <ImageView
         android:id="@+id/cat_picture"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
+        android:layout_width="@dimen/size_cat_picture_details"
+        android:layout_height="@dimen/size_cat_picture_details"
+        android:layout_margin="@dimen/indent_cat_picture_details"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@id/button_save_image"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +102,7 @@
         android:id="@+id/button_save_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Image"
+        android:text="@string/save_image_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

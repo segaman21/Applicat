@@ -4,5 +4,6 @@
     <string name="cat_life_label">Life span:</string>
     <string name="cat_origin_label">Origin:</string>
     <string name="cat_description_label">Description:</string>
-
+    <string name="save_image_button">Save Image</string>
+    <string name="image_saved_toast">Image saved</string>
 </resources>

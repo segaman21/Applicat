@@ -8,7 +8,7 @@ import kotlinx.coroutines.withContext
 
 class Repository {
     private val api = NetworkModule().provideApi()
-//    private val key = "533ac9a5-6204-4c64-8faa-3e6494c6a961"
+//  private val key = "533ac9a5-6204-4c64-8faa-3e6494c6a961"
 
     suspend fun loadAllCats(context: Context): List<ModelCategories>? {
         var cat: List<ModelCategories>? = null
